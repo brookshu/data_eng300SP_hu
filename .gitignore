@@ -2,3 +2,9 @@
 *.pem
 *credentials
 *.crt
+
+# homework 2
+homework_2/ml-1m.zip
+homework_2/my_recommendations.json
+homework_2/my_user_profile.csv
+homework_2/offline_bert_outputs/
