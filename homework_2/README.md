@@ -1,9 +1,12 @@
 
-SSH into EC2 Instance:
-1. Navigate to where .pem file is located
-2. Go to EC2 instance and start it
-3. Ensure connection to Northwestern WiFi or GlobalProtect VPN
-4. Once started, press connect and copy/paste the example at the bottom of the page into terminal 
+## Homework 2
+How to run and the expected results.
+
+To start, SSH into EC2 Instance:
+1. Go to the [Northwestern AWS Start Page](https://nu-sso.awsapps.com/start/#/)
+2. Ensure connection to Northwestern WiFi or GlobalProtect VPN
+3. Go to EC2 instance and start it
+4. Once started, press connect and use the example at the bottom of the connect page to connect a VSCode remote window
 
 ### Box 1:
 **Use**: Connect to AWS. I used the AWS CLI. To mirror what I did:
@@ -79,7 +82,7 @@ Notes:
 **Expected Output:** ```Movies selected: 887```
 
 ### Box 7:
-**Use:** Define helper functions for BERT encoding, which convert text for each movie into embeddings in vector space
+**Use:** Define helper functions for BERT encoding, which convert text for each movie into embeddings in vector space. This box was written with the help of an LLM.
 **Expected Output:** None (success)
 
 ### Box 8:
@@ -200,3 +203,8 @@ Search for: Shawshank Redemption
 ### Box 28:
 **Use:** Save ```my_results``` to S3
 **Expected Output:** ```uploaded my recommendations to S3```
+
+## Generative AI Disclosure
+1. Tools used: ChatGPT
+2. The key prompts: I used the LLM to primarily do two things: ```pip install torch``` and optimize my ```bert_embed``` function. My EC2 Instance kept crashing while trying to do both, which I assume was due to a lack of memory. I asked for a workaround to the former problem, and it gave me a pip command to install a CPU-only torch library. I asked for a workaround to the latter problem, and it recommended batching, as seen in box 7.
+3. I verified the results by running my original Jupyter notebook locally, then running it again on EC2 with the fixes. The outputs were the same.
